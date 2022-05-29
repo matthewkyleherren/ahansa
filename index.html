@@ -88,6 +88,20 @@
     .drawdown-menu ul li{
       margin-bottom: 20px;
     }
+    .drawdown-menu .close-button{
+      color: white;
+      position: absolute;
+      top: 30px;
+      right: 80px;
+      font-size: 30pt;
+
+      font-weight: 100;
+      cursor: pointer;
+      
+    }
+    .drawdown-menu .close-button i{
+      -webkit-text-stroke: 6px black;
+    }
  
   </style>
 
@@ -105,6 +119,9 @@
   </div>
 
   <div class="drawdown-menu">
+    <div class="close-button">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
     <ul>
       <li>Info</li>
       <li>Contact</li>
@@ -503,7 +520,15 @@
       $('.drawdown-menu').css({
         'display' : 'grid'
       })
-    })
+    });
+
+    $('.close-button').on('click', function(){
+      $('.drawdown-menu').css({
+        'display' : 'none'
+      })
+    });
+
+
   </script>
 
   <script>
