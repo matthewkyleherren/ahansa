@@ -95,7 +95,7 @@
 <body class="body-2">
 
 
-  <div class="hambuger">
+  <div class="hambuger" onclick="">
     <i class="fa-solid fa-burger-soda"></i>
   </div>
 
@@ -493,6 +493,12 @@
     $('.list-parent').on('mouseleave', function() {
       $('.list-parent').addClass('current');
     });
+
+    $('.hambuger').on('click', function(){
+      $('.drawdown-menu').css({
+        'display' : 'grid'
+      })
+    })
   </script>
 
   <script>
