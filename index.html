@@ -23,8 +23,10 @@
       n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
     }(window, document);
   </script>
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   <link href="https://uploads-ssl.webflow.com/6130a73307852c111b31b270/6170e41a1653c55a6a88c541_favicon_32x32.jpg" rel="shortcut icon" type="image/x-icon" />
   <link href="https://uploads-ssl.webflow.com/6130a73307852c111b31b270/6170e4250bf469747b5ef663_webclip_256x256.jpg" rel="apple-touch-icon" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
     body {
       -webkit-font-smoothing: antialiased;
@@ -45,6 +47,62 @@
       color: #0f0f0f;
       background: #d1c9bc;
     }
+
+    .hambuger{
+      height:  50px;
+      width: 50px;
+      z-index: 9999;
+      background-color: black;
+      position: absolute;
+      top: 30px;
+      right: 80px;
+      color: aliceblue;
+      display: grid;
+      place-items: center;
+      font-size: 30pt;
+      font-weight: 100;
+      cursor: pointer;
+    }
+    .drawdown-menu{
+      height:  100vh;
+      width: 100%;
+      z-index: 9999;
+      background-color: black;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      color: aliceblue;
+
+      display: none;
+      place-items: center;
+
+    }
+    .drawdown-menu ul{
+      color: #d1c9bc;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+
+    }
+    .drawdown-menu ul li{
+      margin-bottom: 20px;
+    }
+    .drawdown-menu .close-button{
+      color: white;
+      position: absolute;
+      top: 30px;
+      right: 80px;
+      font-size: 30pt;
+
+      font-weight: 100;
+      cursor: pointer;
+      
+    }
+    .drawdown-menu .close-button i{
+      -webkit-text-stroke: 6px black;
+    }
+ 
   </style>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -54,6 +112,21 @@
 </head>
 
 <body class="body-2">
+
+
+  <div class="hambuger" onclick="">
+    =
+  </div>
+
+  <div class="drawdown-menu">
+    <div class="close-button">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <ul>
+      <li>Info</li>
+      <li>Contact</li>
+    </ul>
+  </div>
   <div class="bg-section-black"></div>
   <div class="intro-wrapper">
     <div class="intro-load-wrapper">
@@ -442,6 +515,20 @@
     $('.list-parent').on('mouseleave', function() {
       $('.list-parent').addClass('current');
     });
+
+    $('.hambuger').on('click', function(){
+      $('.drawdown-menu').css({
+        'display' : 'grid'
+      })
+    });
+
+    $('.close-button').on('click', function(){
+      $('.drawdown-menu').css({
+        'display' : 'none'
+      })
+    });
+
+
   </script>
 
   <script>
